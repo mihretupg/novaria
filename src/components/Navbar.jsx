@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Sun, Moon } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { NAV_LINKS, WHATSAPP_NUMBER } from '../data';
-import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { isDark, toggle } = useTheme();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -43,16 +41,6 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            {/* Theme toggle */}
-            <button onClick={toggle}
-              className="w-9 h-9 rounded-full border border-theme flex items-center justify-center text-theme-muted hover:text-gold-400 hover:border-gold-400/40 transition-all duration-300"
-              aria-label="Toggle theme">
-              {isDark
-                ? <Sun size={15} />
-                : <Moon size={15} />
-              }
-            </button>
-
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm font-medium text-theme-muted hover:text-theme transition-colors">
               <Phone size={14} /><span>WhatsApp</span>
@@ -64,11 +52,6 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden flex items-center gap-3">
-            <button onClick={toggle}
-              className="w-9 h-9 rounded-full border border-theme flex items-center justify-center text-theme-muted"
-              aria-label="Toggle theme">
-              {isDark ? <Sun size={15} /> : <Moon size={15} />}
-            </button>
             <button className="w-10 h-10 rounded-xl border border-theme text-theme-muted hover:text-gold-400 hover:border-gold-400/40 transition-colors flex items-center justify-center"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
