@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Novaria Limo – Premium luxury chauffeur service in Dallas, TX. Airport transfers, corporate travel, weddings & events. Available 24/7. Book now.">
+  <title>Novaria – Luxury Chauffeur Service Dallas</title>
+  <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <button class="nav-logo" onclick="scrollToTop()">
+      <span class="logo-brand">NOVARIA</span>
+      <span class="logo-tag">Limo</span>
+    </button>
+    <div class="nav-links">
+      <a href="#services" class="nav-link" onclick="navClick(event)">Services</a>
+      <a href="#fleet" class="nav-link" onclick="navClick(event)">Fleet</a>
+      <a href="#booking" class="nav-link" onclick="navClick(event)">Booking</a>
+      <a href="#about" class="nav-link" onclick="navClick(event)">About</a>
+      <a href="#contact" class="nav-link" onclick="navClick(event)">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button id="themeBtn" class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <a href="https://wa.me/14704190528" target="_blank" class="btn-wa">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 8.81 19.79 19.79 0 0 1 0 .18A2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <a href="#booking" class="btn-primary btn-sm" onclick="navClick(event)">Book Now</a>
+      <button id="menuBtn" class="icon-btn menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+        <svg id="menuIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg id="closeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-head">
+        <span>NOVARIA</span>
+        <button type="button" class="mobile-close-btn" onclick="closeMenu()" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="#services" onclick="mobileNavClick(event)">Services</a>
+        <a href="#fleet" onclick="mobileNavClick(event)">Fleet</a>
+        <a href="#booking" onclick="mobileNavClick(event)">Booking</a>
+        <a href="#about" onclick="mobileNavClick(event)">About</a>
+        <a href="#contact" onclick="mobileNavClick(event)">Contact</a>
+      </nav>
+      <a href="https://wa.me/14704190528" target="_blank" class="btn-primary">WhatsApp Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="hero-badge-full">Premium Dallas Transportation</span>
+        <span class="hero-badge-short">Premium Dallas Service</span>
+      </div>
+      <h1 class="hero-title playfair">Ride in Luxury,<br><span class="text-gold-gradient">Arrive in Style</span></h1>
+      <p class="hero-desc">Dallas's premier luxury chauffeur service. From airport transfers to corporate events, we deliver an exceptional experience every ride.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-primary" onclick="navClick(event)">Reserve Your Ride</a>
+        <a href="https://wa.me/14704190528" target="_blank" class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+      <div class="hero-info-badges">
+        <span>24/7 Availability</span>
+        <span>VIP Customer Care</span>
+        <span>DFW Airport Service</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-stars">★★★★★</div>
+        <div class="hero-card-label">Luxury Experience <span class="hero-card-badge">Premium</span></div>
+        <div class="hero-card-items">
+          <div class="hero-card-item"><strong>Executive Class</strong><span>Premium fleet selection</span></div>
+          <div class="hero-card-item"><strong>Airport Pickup</strong><span>Flight tracking included</span></div>
+          <div class="hero-card-item"><strong>Special Events</strong><span>Weddings, proms &amp; more</span></div>
+          <div class="hero-card-item"><strong>Corporate Travel</strong><span>Executive chauffeur service</span></div>
+        </div>
+        <a href="#booking" class="btn-primary btn-full" onclick="navClick(event)">Get an Instant Quote</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div></div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section">
+  <div class="parallax-blob blob1"></div>
+  <div class="parallax-blob blob2"></div>
+  <div class="container">
+    <div class="section-header aos">
+      <div class="section-label">What We Offer</div>
+      <h2 class="playfair">World-Class Services</h2>
+      <p>From executive airport transfers to luxury wedding transportation, Novaria delivers unmatched quality for every occasion.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card aos" style="--d:0ms">
+        <div class="service-icon">✈</div>
+        <div class="service-body">
+          <div class="service-title">Airport Transfer</div>
+          <div class="service-subtitle">DFW &amp; Love Field</div>
+          <p>Professional airport transportation with flight tracking and meet &amp; greet service.</p>
+          <ul class="service-features"><li>Flight tracking</li><li>Meet &amp; greet service</li><li>24/7 availability</li><li>Luggage assistance</li><li>Fixed pricing</li></ul>
+        </div>
+        <div class="service-line"></div>
+      </div>
+      <div class="service-card aos" style="--d:90ms">
+        <div class="service-icon">💼</div>
+        <div class="service-body">
+          <div class="service-title">Corporate Travel</div>
+          <div class="service-subtitle">Executive Class</div>
+          <p>Premium corporate transportation with privacy partitions and business amenities.</p>
+          <ul class="service-features"><li>Wi-Fi enabled vehicles</li><li>Privacy partition</li><li>Refreshments included</li><li>Professional chauffeurs</li><li>Hourly billing</li></ul>
+        </div>
+        <div class="service-line"></div>
+      </div>
+      <div class="service-card aos" style="--d:180ms">
+        <div class="service-icon">💍</div>
+        <div class="service-body">
+          <div class="service-title">Wedding &amp; Events</div>
+          <div class="service-subtitle">Special Occasions</div>
+          <p>Make your special day unforgettable with our luxury event transportation.</p>
+          <ul class="service-features"><li>Decorated vehicles</li><li>Red carpet service</li><li>Photography assistance</li><li>Multiple pickups</li><li>Custom packages</li></ul>
+        </div>
+        <div class="service-line"></div>
+      </div>
+      <div class="service-card aos" style="--d:270ms">
+        <div class="service-icon">⏱</div>
+        <div class="service-body">
+          <div class="service-title">Hourly Service</div>
+          <div class="service-subtitle">At Your Disposal</div>
+          <p>Flexible hourly chauffeur service with unlimited stops and custom itineraries.</p>
+          <ul class="service-features"><li>Flexible itinerary</li><li>Multiple stops included</li><li>Night out packages</li><li>City tours</li><li>Waiting time included</li></ul>
+        </div>
+        <div class="service-line"></div>
+      </div>
+      <div class="service-card aos" style="--d:360ms">
+        <div class="service-icon">👥</div>
+        <div class="service-body">
+          <div class="service-title">Group Transportation</div>
+          <div class="service-subtitle">Up to 14 Passengers</div>
+          <p>Spacious luxury vehicles perfect for corporate groups and special events.</p>
+          <ul class="service-features"><li>Large capacity vehicles</li><li>Event coordination</li><li>Group discounts</li><li>Coordination for groups</li><li>Concert &amp; event packages</li></ul>
+        </div>
+        <div class="service-line"></div>
+      </div>
+      <div class="service-card service-cta aos" style="--d:450ms">
+        <div class="service-cta-content">
+          <div class="service-cta-title">Need Something Custom?</div>
+          <p>Every journey is unique. Let us craft a personalized luxury experience tailored to your needs.</p>
+          <a href="https://wa.me/14704190528?text=Hi%20Novaria%2C%20I%20have%20a%20custom%20transportation%20request" target="_blank" class="service-cta-link">Chat with us →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLEET ===== -->
+<section id="fleet" class="section">
+  <div class="parallax-blob blob3"></div>
+  <div class="parallax-blob blob4"></div>
+  <div class="container">
+    <div class="section-header aos">
+      <div class="section-label">Our Vehicles</div>
+      <h2 class="playfair">The Premium Collection</h2>
+      <p>Choose from our handpicked selection of luxury vehicles, each maintained to the highest standards.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="fleet-grid">
+      <div class="fleet-card aos" data-vehicle="Cadillac Escalade" style="--d:0ms">
+        <div class="fleet-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1683778547049-8d969766b441?w=800&q=80&auto=format&fit=crop" alt="Cadillac Escalade" class="fleet-photo" loading="lazy">
+          <div class="fleet-shimmer"></div>
+          <div class="fleet-fade"></div>
+          <span class="fleet-badge badge-gold">Most Popular</span>
+          <span class="fleet-cat">Luxury SUV</span>
+        </div>
+        <div class="fleet-body">
+          <h3 class="fleet-name">Cadillac Escalade</h3>
+          <div class="fleet-divider"></div>
+          <div class="fleet-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>6 Passengers</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>6 Luggage</span>
+          </div>
+          <div class="fleet-tags"><span>Leather seating</span><span>Premium audio</span><span>Climate control</span><span>Wi-Fi</span><span>Tinted windows</span></div>
+          <div class="fleet-best"><div class="fleet-best-label">Best For</div><div class="fleet-best-tags"><span>Airport Transfer</span><span>Corporate Travel</span><span>Special Events</span></div></div>
+          <button class="btn-primary btn-full fleet-btn" onclick="selectVehicle(this,'Cadillac Escalade')">Select &amp; Book</button>
+        </div>
+      </div>
+      <div class="fleet-card aos" data-vehicle="Mercedes Sprinter" style="--d:150ms">
+        <div class="fleet-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1756443773455-22e4f3d8d823?w=800&q=80&auto=format&fit=crop" alt="Mercedes Sprinter" class="fleet-photo" loading="lazy">
+          <div class="fleet-shimmer"></div>
+          <div class="fleet-fade"></div>
+          <span class="fleet-badge badge-purple">Group Special</span>
+          <span class="fleet-cat">Executive Van</span>
+        </div>
+        <div class="fleet-body">
+          <h3 class="fleet-name">Mercedes Sprinter</h3>
+          <div class="fleet-divider"></div>
+          <div class="fleet-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>14 Passengers</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>14 Luggage</span>
+          </div>
+          <div class="fleet-tags"><span>Executive seating</span><span>Conference setup</span><span>Premium audio</span><span>USB charging</span><span>Climate control</span></div>
+          <div class="fleet-best"><div class="fleet-best-label">Best For</div><div class="fleet-best-tags"><span>Group Events</span><span>Airport Transfers</span><span>Corporate Meetings</span></div></div>
+          <button class="btn-primary btn-full fleet-btn" onclick="selectVehicle(this,'Mercedes Sprinter')">Select &amp; Book</button>
+        </div>
+      </div>
+      <div class="fleet-card aos" data-vehicle="Chevrolet Suburban" style="--d:300ms">
+        <div class="fleet-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1758025550252-2eb870da49cc?w=800&q=80&auto=format&fit=crop" alt="Chevrolet Suburban" class="fleet-photo" loading="lazy">
+          <div class="fleet-shimmer"></div>
+          <div class="fleet-fade"></div>
+          <span class="fleet-cat">Full-Size SUV</span>
+        </div>
+        <div class="fleet-body">
+          <h3 class="fleet-name">Chevrolet Suburban</h3>
+          <div class="fleet-divider"></div>
+          <div class="fleet-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>7 Passengers</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>7 Luggage</span>
+          </div>
+          <div class="fleet-tags"><span>Spacious interior</span><span>Premium audio</span><span>Climate control</span><span>Luggage space</span><span>Tinted windows</span></div>
+          <div class="fleet-best"><div class="fleet-best-label">Best For</div><div class="fleet-best-tags"><span>Family Travel</span><span>Airport Transfers</span><span>Long Distance</span></div></div>
+          <button class="btn-primary btn-full fleet-btn" onclick="selectVehicle(this,'Chevrolet Suburban')">Select &amp; Book</button>
+        </div>
+      </div>
+      <div class="fleet-card aos" data-vehicle="Genesis G90" style="--d:450ms">
+        <div class="fleet-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=800&q=80&auto=format&fit=crop" alt="Genesis G90" class="fleet-photo" loading="lazy">
+          <div class="fleet-shimmer"></div>
+          <div class="fleet-fade"></div>
+          <span class="fleet-badge badge-rose">VIP Choice</span>
+          <span class="fleet-cat">Executive Sedan</span>
+        </div>
+        <div class="fleet-body">
+          <h3 class="fleet-name">Genesis G90</h3>
+          <div class="fleet-divider"></div>
+          <div class="fleet-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>3 Passengers</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>3 Luggage</span>
+          </div>
+          <div class="fleet-tags"><span>Massaging seats</span><span>Premium sound</span><span>Ambient lighting</span><span>Wi-Fi</span><span>Mini bar</span></div>
+          <div class="fleet-best"><div class="fleet-best-label">Best For</div><div class="fleet-best-tags"><span>Corporate Travel</span><span>Airport VIP</span><span>Special Occasions</span></div></div>
+          <button class="btn-primary btn-full fleet-btn" onclick="selectVehicle(this,'Genesis G90')">Select &amp; Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKING ===== -->
+<section id="booking" class="section">
+  <div class="container booking-layout">
+    <div class="booking-sidebar">
+      <div class="section-label">Reserve Your Ride</div>
+      <h2 class="playfair">Book Your Luxury Journey</h2>
+      <div class="booking-steps-list">
+        <div class="booking-step-row"><div class="step-num">1</div><div><strong>Choose Service</strong><p>Select the type of transportation you need.</p></div></div>
+        <div class="booking-step-row"><div class="step-num">2</div><div><strong>Trip Details</strong><p>Provide pickup, drop-off, date, and time.</p></div></div>
+        <div class="booking-step-row"><div class="step-num">3</div><div><strong>Confirm &amp; Send</strong><p>Review and send your booking via WhatsApp.</p></div></div>
+      </div>
+      <div class="booking-trust">
+        <div class="trust-badge">✓ Instant Confirmation</div>
+        <div class="trust-badge">✓ 24/7 Support</div>
+        <div class="trust-badge">✓ No Hidden Fees</div>
+      </div>
+    </div>
+    <div class="booking-form-wrap aos">
+      <div class="step-indicator" id="stepIndicator">
+        <div class="step-dot active" data-dot="0">1</div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-dot="1">2</div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-dot="2">3</div>
+      </div>
+      <!-- Step 0 -->
+      <div class="form-step active" id="step0">
+        <h3 class="form-step-title">Select Service Type</h3>
+        <div class="stype-grid">
+          <button class="stype-btn" data-service="Airport Transfer" onclick="selectServiceType(this)"><span class="stype-icon">✈</span><span>Airport Transfer</span></button>
+          <button class="stype-btn" data-service="Corporate Travel" onclick="selectServiceType(this)"><span class="stype-icon">💼</span><span>Corporate Travel</span></button>
+          <button class="stype-btn" data-service="Wedding &amp; Events" onclick="selectServiceType(this)"><span class="stype-icon">💍</span><span>Wedding &amp; Events</span></button>
+          <button class="stype-btn" data-service="Hourly Service" onclick="selectServiceType(this)"><span class="stype-icon">⏱</span><span>Hourly Service</span></button>
+          <button class="stype-btn" data-service="Group Transportation" onclick="selectServiceType(this)"><span class="stype-icon">👥</span><span>Group Transportation</span></button>
+        </div>
+        <div class="form-error" id="step0Error" style="display:none">Please select a service type to continue.</div>
+        <div class="form-actions"><button class="btn-primary" onclick="nextStep(0)">Continue →</button></div>
+      </div>
+      <!-- Step 1 -->
+      <div class="form-step" id="step1">
+        <h3 class="form-step-title">Trip Details</h3>
+        <div class="form-grid">
+          <div class="form-field"><label for="fullName">Full Name *</label><input type="text" id="fullName" placeholder="John Smith" autocomplete="name"><div class="field-error" id="fullNameError"></div></div>
+          <div class="form-field"><label for="phone">Phone Number *</label><input type="tel" id="phone" placeholder="+1 (470) 419-0528" autocomplete="tel"><div class="field-error" id="phoneError"></div></div>
+          <div class="form-field full-width"><label for="pickup">Pickup Location *</label><input type="text" id="pickup" placeholder="Dallas/Fort Worth International Airport"><div class="field-error" id="pickupError"></div></div>
+          <div class="form-field full-width" id="dropoffField"><label for="dropoff">Drop-off Location *</label><input type="text" id="dropoff" placeholder="123 Main St, Dallas, TX"><div class="field-error" id="dropoffError"></div></div>
+          <div class="form-field"><label for="tripDate">Date *</label><input type="date" id="tripDate"><div class="field-error" id="tripDateError"></div></div>
+          <div class="form-field"><label for="tripTime">Time *</label><input type="time" id="tripTime"><div class="field-error" id="tripTimeError"></div></div>
+          <div class="form-field full-width vehicle-field">
+            <label id="vehicleTypeLabel">Preferred Vehicle (optional)</label>
+            <input type="hidden" id="vehicleType" value="">
+            <div class="vehicle-dropdown" data-vehicle-dropdown>
+              <button type="button" class="vehicle-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="vehicleTypeLabel">
+                <span data-vehicle-label>No preference</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="vehicle-menu" role="listbox">
+                <button type="button" class="vehicle-option" role="option" data-value="" aria-selected="true">No preference - Let our team choose the best fit</button>
+                <button type="button" class="vehicle-option" role="option" data-value="Cadillac Escalade">Cadillac Escalade - Luxury SUV - 6 pax</button>
+                <button type="button" class="vehicle-option" role="option" data-value="Mercedes Sprinter">Mercedes Sprinter - Executive Van - 14 pax</button>
+                <button type="button" class="vehicle-option" role="option" data-value="Chevrolet Suburban">Chevrolet Suburban - Full-Size SUV - 7 pax</button>
+                <button type="button" class="vehicle-option" role="option" data-value="Genesis G90">Genesis G90 - Executive Sedan - 3 pax</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-field full-width"><label for="notes">Special Requests (optional)</label><textarea id="notes" rows="3" placeholder="Child seat, decorations, specific requirements..."></textarea></div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-outline" onclick="prevStep(1)">← Back</button>
+          <button class="btn-primary" onclick="nextStep(1)">Review Booking →</button>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="form-step" id="step2">
+        <h3 class="form-step-title">Review Your Booking</h3>
+        <div class="booking-review" id="bookingReview"></div>
+        <div class="booking-note">Clicking "Send via WhatsApp" will open WhatsApp with your booking details pre-filled. Our team will confirm your reservation shortly.</div>
+        <div class="form-actions">
+          <button class="btn-outline" onclick="prevStep(2)">← Back</button>
+          <button class="btn-primary btn-wa-submit" onclick="submitBooking()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Send via WhatsApp
+          </button>
+        </div>
+      </div>
+      <!-- Success -->
+      <div class="form-success" id="formSuccess" style="display:none">
+        <div class="success-icon">✓</div>
+        <h3>Booking Request Sent!</h3>
+        <p>Thank you, <span id="successName" class="text-gold"></span>! Your booking request has been sent via WhatsApp. We'll confirm your reservation shortly.</p>
+        <div class="success-summary" id="successSummary"></div>
+        <button class="btn-outline" onclick="resetForm()">Book Another Ride</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats" class="stats-section">
+  <div class="stats-top-line"></div>
+  <div class="parallax-blob blob5"></div>
+  <div class="container">
+    <div class="stats-grid aos">
+      <div class="stat-item" style="--d:0ms"><div class="stat-num playfair text-gold-gradient" data-target="5000" data-suffix="+">0+</div><div class="stat-label">Rides Completed</div></div>
+      <div class="stat-item" style="--d:110ms"><div class="stat-num playfair text-gold-gradient" data-display="4.9★">4.9★</div><div class="stat-label">Average Rating</div></div>
+      <div class="stat-item" style="--d:220ms"><div class="stat-num playfair text-gold-gradient" data-static="true">24/7</div><div class="stat-label">Availability</div></div>
+      <div class="stat-item" style="--d:330ms"><div class="stat-num playfair text-gold-gradient" data-target="15" data-suffix="min">15min</div><div class="stat-label">Avg Response Time</div></div>
+    </div>
+    <div class="testimonials-wrap aos" style="--d:200ms">
+      <h2 class="testimonials-title playfair">What Our Clients Say</h2>
+      <div class="section-divider"></div>
+      <div class="testimonials-grid">
+        <div class="t-card" style="--d:300ms">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Novaria exceeded every expectation. The Escalade was immaculate and our driver was professional throughout."</p>
+          <div class="t-divider"></div>
+          <div class="t-author"><div class="t-avatar">R</div><div><div class="t-name">Robert M.</div><div class="t-role">CEO, Fortune 500</div></div></div>
+        </div>
+        <div class="t-card" style="--d:420ms">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"They made our wedding day flawless. The decorated Escalade was stunning and our driver was incredibly accommodating."</p>
+          <div class="t-divider"></div>
+          <div class="t-author"><div class="t-avatar">S</div><div><div class="t-name">Sarah &amp; James</div><div class="t-role">Wedding Clients</div></div></div>
+        </div>
+        <div class="t-card" style="--d:540ms">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"I use Novaria for all my DFW airport runs. Never late, always professional. Worth every penny."</p>
+          <div class="t-divider"></div>
+          <div class="t-author"><div class="t-avatar">D</div><div><div class="t-name">David L.</div><div class="t-role">Frequent Traveler</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stats-bottom-line"></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="parallax-blob blob6"></div>
+  <div class="parallax-blob blob7"></div>
+  <div class="container about-grid">
+    <div class="about-left aos">
+      <div class="about-feature-card">
+        <div class="about-trophy">🏆</div>
+        <h2 class="playfair">Dallas's Premier<br><em class="text-gold-gradient">Luxury Chauffeur</em></h2>
+        <p>Founded with a passion for excellence, redefining luxury transportation in Dallas.</p>
+        <div class="about-clients-badge">5,000+ Satisfied Clients</div>
+      </div>
+      <div class="about-license">✓ Fully Insured &amp; Licensed in Texas</div>
+    </div>
+    <div class="about-right aos" style="--d:200ms">
+      <div class="section-label">About Novaria</div>
+      <h2 class="playfair">More Than a Ride.<br><span class="text-gold-gradient">An Experience.</span></h2>
+      <p class="about-desc">Founded with a passion for excellence, Novaria has been redefining luxury transportation in Dallas since day one. Our fleet of premium vehicles and team of professional chauffeurs ensure every journey exceeds expectations.</p>
+      <p class="about-desc">We believe transportation should be more than getting from point A to point B — it should be an experience that reflects your success and sets the tone for what's ahead.</p>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon">🛡️</div><strong>Safety First</strong><p>All vehicles are regularly inspected and maintained to the highest safety standards.</p></div>
+        <div class="value-card"><div class="value-icon">🕐</div><strong>Always On Time</strong><p>Punctuality is our promise. We track flights and monitor traffic to ensure timely arrivals.</p></div>
+        <div class="value-card"><div class="value-icon">🏅</div><strong>Premium Quality</strong><p>From vehicle selection to chauffeur training, we maintain the highest quality standards.</p></div>
+        <div class="value-card"><div class="value-icon">🎧</div><strong>24/7 Support</strong><p>Our dedicated support team is available around the clock for any assistance you need.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <div class="parallax-blob blob8"></div>
+  <div class="parallax-blob blob9"></div>
+  <div class="container">
+    <div class="section-header aos">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="playfair">We're Here for You,<br><em class="text-gold-gradient">Around the Clock</em></h2>
+      <p>Reach us via WhatsApp for the fastest response. Our team is available 24/7, 365 days a year.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-cards aos">
+      <div class="contact-card contact-featured" style="--d:0ms">
+        <div class="contact-icon-wrap">💬</div>
+        <div class="contact-info"><div class="contact-title">WhatsApp</div><div class="contact-value">Chat Now</div><div class="contact-sub">Fastest response</div></div>
+        <a href="https://wa.me/14704190528" target="_blank" class="btn-primary btn-sm">Open</a>
+      </div>
+      <div class="contact-card" style="--d:100ms">
+        <div class="contact-icon-wrap">📞</div>
+        <div class="contact-info"><div class="contact-title">Phone</div><div class="contact-value">+1 (470) 419-0528</div><div class="contact-sub">Call anytime</div></div>
+        <a href="tel:+14704190528" class="btn-outline btn-sm">Call</a>
+      </div>
+      <div class="contact-card" style="--d:200ms">
+        <div class="contact-icon-wrap">📍</div>
+        <div class="contact-info"><div class="contact-title">Service Area</div><div class="contact-value">Dallas, TX</div><div class="contact-sub">DFW Metroplex</div></div>
+      </div>
+      <div class="contact-card" style="--d:300ms">
+        <div class="contact-icon-wrap">🕐</div>
+        <div class="contact-info"><div class="contact-title">Hours</div><div class="contact-value">24 / 7</div><div class="contact-sub">365 days a year</div></div>
+      </div>
+    </div>
+    <div class="cta-banner aos" style="--d:500ms">
+      <div class="cta-text"><h3>Ready to Ride in Style?</h3><p>Book your luxury transportation today and experience the Novaria difference.</p></div>
+      <div class="cta-actions">
+        <a href="https://wa.me/14704190528" target="_blank" class="btn-primary">WhatsApp Us</a>
+        <a href="#booking" class="btn-outline" onclick="navClick(event)">Book Your Ride</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="footer-top-line"></div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <button class="nav-logo" onclick="scrollToTop()"><span class="logo-brand">NOVARIA</span><span class="logo-tag">Limo</span></button>
+      <p>Dallas's premier luxury chauffeur service. Your comfort, our mission.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/14704190528" target="_blank" class="social-btn" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+        <a href="tel:+14704190528" class="social-btn" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 8.81 19.79 19.79 0 0 1 0 .18A2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">NAVIGATION</div>
+      <a href="#services" onclick="navClick(event)">Services</a>
+      <a href="#fleet" onclick="navClick(event)">Fleet</a>
+      <a href="#booking" onclick="navClick(event)">Booking</a>
+      <a href="#about" onclick="navClick(event)">About</a>
+      <a href="#contact" onclick="navClick(event)">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">SERVICES</div>
+      <a href="#services" onclick="navClick(event)">Airport Transfer</a>
+      <a href="#services" onclick="navClick(event)">Corporate Travel</a>
+      <a href="#services" onclick="navClick(event)">Wedding &amp; Events</a>
+      <a href="#services" onclick="navClick(event)">Hourly Service</a>
+      <a href="#services" onclick="navClick(event)">Group Transportation</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>&copy; <span id="year"></span> Novaria. All rights reserved.</span>
+      <span>Serving Dallas &amp; the DFW Metroplex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
