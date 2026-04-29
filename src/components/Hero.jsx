@@ -50,7 +50,7 @@ export default function Hero() {
             height: '100%',
             objectFit: 'cover',
             objectPosition: 'center 58%',
-            filter: 'brightness(1.18) contrast(1.08) saturate(1.08)',
+            filter: 'brightness(1.2) contrast(1.08) saturate(1.08)',
           }}
         />
       </div>

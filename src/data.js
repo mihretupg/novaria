@@ -111,6 +111,6 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const PHONE_NUMBER = '14704190528';
+export const PHONE_NUMBER = '+14704190528';
 export const PHONE_DISPLAY = '+1 (470) 419-0528';
 export const WHATSAPP_NUMBER = PHONE_NUMBER;

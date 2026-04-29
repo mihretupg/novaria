@@ -397,9 +397,9 @@ html:not(.dark) #navbar.scrolled {
 .hero-bg {
   position: absolute;
   inset: -10%;
-  background-image: url('https://images.unsplash.com/photo-1686199948265-ddc4ebb1cc92?w=1600&q=80&auto=format&fit=crop');
+  background-image: url('https://unsplash.com/photos/xdYroKLD92U/download?force=true&w=1800');
   background-size: cover;
-  background-position: center;
+  background-position: center 58%;
   will-change: transform;
 }
 
@@ -407,14 +407,14 @@ html:not(.dark) #navbar.scrolled {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.60) 50%, rgba(8,8,8,0.30) 100%),
-    linear-gradient(180deg, rgba(8,8,8,0.60) 0%, transparent 30%, transparent 70%, rgba(8,8,8,0.80) 100%);
+    linear-gradient(90deg, rgba(8,8,8,0.78) 0%, rgba(8,8,8,0.38) 48%, rgba(8,8,8,0.10) 100%),
+    linear-gradient(180deg, rgba(8,8,8,0.38) 0%, transparent 35%, transparent 72%, rgba(8,8,8,0.62) 100%);
   z-index: 1;
 }
 html:not(.dark) .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(248,245,239,0.75) 0%, rgba(248,245,239,0.50) 50%, rgba(248,245,239,0.20) 100%),
-    linear-gradient(180deg, rgba(248,245,239,0.50) 0%, transparent 30%, transparent 70%, rgba(248,245,239,0.70) 100%);
+    linear-gradient(90deg, rgba(248,245,239,0.72) 0%, rgba(248,245,239,0.36) 48%, rgba(248,245,239,0.08) 100%),
+    linear-gradient(180deg, rgba(248,245,239,0.34) 0%, transparent 35%, transparent 72%, rgba(248,245,239,0.56) 100%);
 }
 
 .hero-grid {
