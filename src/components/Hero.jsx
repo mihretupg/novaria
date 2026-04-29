@@ -43,14 +43,14 @@ export default function Hero() {
         }}
       >
         <img
-          src="https://unsplash.com/photos/xdYroKLD92U/download?force=true&w=1800"
-          alt="Black stretch limousine outside an upscale entrance"
+          src="https://unsplash.com/photos/sf9IcZ5wamw/download?force=true&w=1800"
+          alt="Black Cadillac Escalade parked in front of a building"
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            objectPosition: 'center 58%',
-            filter: 'brightness(1.2) contrast(1.08) saturate(1.08)',
+            objectPosition: 'center 54%',
+            filter: 'brightness(1.16) contrast(1.08) saturate(1.05)',
           }}
         />
       </div>

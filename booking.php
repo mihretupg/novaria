@@ -101,7 +101,6 @@ Date:      {$date}
 Time:      {$time}
 Vehicle:   {$vehicle}
 Notes:     {$notes}
-
 Status: PENDING CONFIRMATION
     ";
 

@@ -397,9 +397,9 @@ html:not(.dark) #navbar.scrolled {
 .hero-bg {
   position: absolute;
   inset: -10%;
-  background-image: url('https://unsplash.com/photos/xdYroKLD92U/download?force=true&w=1800');
+  background-image: url('https://unsplash.com/photos/sf9IcZ5wamw/download?force=true&w=1800');
   background-size: cover;
-  background-position: center 58%;
+  background-position: center 54%;
   will-change: transform;
 }
 
