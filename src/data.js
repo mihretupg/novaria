@@ -65,8 +65,8 @@ export const FLEET = [
     bestFor: ['Airport Transfer', 'Corporate Travel', 'Hourly Service'],
     badge: 'Most Popular',
     badgeColor: 'bg-gold-500 text-black',
-    image: 'https://images.unsplash.com/photo-1683778547049-8d969766b441?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Black Cadillac Escalade luxury SUV',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Cadillac_escalade.jpg',
+    imageAlt: 'Black Cadillac Escalade side profile',
   },
   {
     id: 'suburban',
