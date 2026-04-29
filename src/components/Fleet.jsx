@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Users, Briefcase, ChevronRight } from 'lucide-react';
 import { FLEET } from '../data';
-import { useParallax } from '../hooks/useParallax';
 import ParallaxBg from './ParallaxBg';
 
 function useInView(threshold = 0.1) {
@@ -17,24 +16,19 @@ function useInView(threshold = 0.1) {
 
 // Per-card image parallax — image shifts inside the card as you scroll
 function ParallaxPhoto({ src, alt }) {
-  const [imgRef, offset] = useParallax(0.18);
-
   return (
-    <div ref={imgRef} className="relative h-56 overflow-hidden group">
+    <div className="relative h-64 overflow-hidden group bg-black">
       <img
         src={src}
         alt={alt}
         loading="lazy"
         style={{
           width: '100%',
-          height: '130%',          // taller than container so shift has room
-          objectFit: 'cover',
+          height: '100%',
+          objectFit: 'contain',
           objectPosition: 'center',
-          transform: `translateY(${offset}px)`,
-          willChange: 'transform',
-          marginTop: '-15%',       // start centered
         }}
-        className="transition-[filter,transform] duration-100 group-hover:brightness-110"
+        className="transition-[filter,transform] duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
       />
 
       {/* gold shimmer on hover */}
@@ -65,22 +59,18 @@ export default function Fleet({ onSelectVehicle }) {
   };
 
   return (
-    <section id="fleet" ref={sectionRef} className="relative py-32 overflow-hidden section-bg">
+    <section id="fleet" ref={sectionRef} className="relative py-24 overflow-hidden section-bg">
       <ParallaxBg factor={0.28} className="bottom-0 left-1/3 w-[500px] h-[500px] rounded-full bg-gold-500/[0.04] blur-[110px]" />
       <ParallaxBg factor={0.18} className="-top-20 right-10 w-72 h-72 rounded-full bg-gold-500/[0.03] blur-[90px]" />
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className={`text-center mb-20 transition-all duration-700 ${
+        <div className={`text-center mb-12 transition-all duration-700 ${
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-400 mb-4">Our Fleet</p>
-          <h2 className="playfair text-4xl md:text-5xl font-bold text-theme mb-5">The Premium Collection</h2>
-          <p className="text-theme-muted max-w-xl mx-auto leading-relaxed">
-            Meticulously maintained, professionally chauffered. Select your vehicle and begin the luxury experience.
-          </p>
-          <div className="section-divider mx-auto mt-8" />
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-400">Our Fleet</p>
+          <div className="section-divider mx-auto mt-6" />
         </div>
 
         {/* Fleet grid */}

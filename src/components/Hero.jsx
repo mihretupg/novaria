@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, MapPin, Star } from 'lucide-react';
-import { WHATSAPP_NUMBER } from '../data';
+import { useEffect, useState } from 'react';
+import { ArrowRight, MapPin, MessageSquare, Star } from 'lucide-react';
+import { PHONE_NUMBER, WHATSAPP_NUMBER } from '../data';
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -43,9 +43,15 @@ export default function Hero() {
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1686199948265-ddc4ebb1cc92?auto=format&fit=crop&w=1800&q=88"
-          alt="Luxury black car at night"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center right' }}
+          src="https://unsplash.com/photos/xdYroKLD92U/download?force=true&w=1800"
+          alt="Black stretch limousine outside an upscale entrance"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center 58%',
+            filter: 'brightness(1.18) contrast(1.08) saturate(1.08)',
+          }}
         />
       </div>
 
@@ -99,6 +105,11 @@ export default function Hero() {
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L0 24l6.335-1.51A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-4.994-1.368l-.358-.213-3.76.897.947-3.666-.234-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
               </svg>
               WhatsApp Us
+            </a>
+            <a href={`sms:${PHONE_NUMBER}?&body=Hi%20Novaria%2C%20I%27d%20like%20to%20book%20a%20ride.`}
+              className="btn-outline flex items-center gap-2 px-8 py-4 rounded-full text-base">
+              <MessageSquare size={18} />
+              Text Us
             </a>
           </div>
 

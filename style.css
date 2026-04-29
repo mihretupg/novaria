@@ -80,7 +80,7 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
 
 .section {
   position: relative;
-  padding: 8rem 0;
+  padding: 5.5rem 0;
   overflow: hidden;
 }
 
@@ -181,7 +181,7 @@ p { color: var(--text-muted); }
 .section-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3rem;
 }
 .section-label {
   display: inline-block;
@@ -679,17 +679,19 @@ html:not(.dark) .hero-overlay {
 
 .fleet-photo-wrap {
   position: relative;
-  height: 240px;
+  height: 280px;
   overflow: hidden;
+  background: #050505;
 }
 .fleet-photo {
   width: 100%;
-  height: 130%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   transition: transform var(--transition);
   will-change: transform;
 }
-.fleet-card:hover .fleet-photo { transform: scale(1.04); }
+.fleet-card:hover .fleet-photo { transform: scale(1.02); }
 
 .fleet-shimmer {
   position: absolute;
@@ -1268,7 +1270,7 @@ html:not(.dark) .form-field textarea {
    =================================================== */
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -1288,6 +1290,20 @@ html:not(.dark) .form-field textarea {
   background: rgba(245,166,35,0.05);
 }
 .contact-icon-wrap { font-size: 1.75rem; }
+.contact-featured .contact-icon-wrap {
+  color: transparent;
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+.contact-featured .contact-icon-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 .contact-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-subtle); }
 .contact-value { font-size: 1rem; font-weight: 700; }
 .contact-sub { font-size: 0.78rem; color: var(--text-subtle); }
@@ -1406,7 +1422,7 @@ html:not(.dark) .form-field textarea {
   .hero-right { display: none; }
   .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
 
-  .section { padding: 5rem 0; }
+  .section { padding: 4rem 0; }
 
   .services-grid { grid-template-columns: 1fr; }
   .fleet-grid { grid-template-columns: 1fr; }

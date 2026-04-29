@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { CheckCircle, AlertCircle, ChevronRight, ChevronLeft, ChevronDown } from 'lucide-react';
-import { WHATSAPP_NUMBER, FLEET } from '../data';
+import { CheckCircle, AlertCircle, ChevronRight, ChevronLeft, ChevronDown, MessageSquare } from 'lucide-react';
+import { PHONE_NUMBER, WHATSAPP_NUMBER, FLEET } from '../data';
 import ParallaxBg from './ParallaxBg';
 
 function useInView(t = 0.08) {
@@ -40,6 +40,17 @@ function buildWhatsAppMessage(d) {
   );
 }
 
+function buildSmsMessage(d) {
+  return encodeURIComponent(
+    `New Booking - Novaria Limo\n\n` +
+    `Name: ${d.fullName}\nPhone: ${d.phone}\n` +
+    `Pickup: ${d.pickup}\nDrop-off: ${d.dropoff || 'N/A'}\n` +
+    `Date: ${d.date}  Time: ${d.time}\n` +
+    `Service: ${d.serviceType}\nVehicle: ${d.vehicleType || 'No preference'}\n` +
+    `Notes: ${d.specialRequest || 'None'}\n\nStatus: PENDING`
+  );
+}
+
 function Field({ label, id, type = 'text', value, onChange, placeholder, required, min, error }) {
   return (
     <div className="flex flex-col gap-1.5">
@@ -60,6 +71,7 @@ export default function BookingForm({ preselectedVehicle }) {
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitMethod, setSubmitMethod] = useState('WhatsApp');
   const [vehicleOpen, setVehicleOpen] = useState(false);
   const vehicleDropdownRef = useRef(null);
 
@@ -101,13 +113,20 @@ export default function BookingForm({ preselectedVehicle }) {
 
   const submit = () => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${buildWhatsAppMessage(form)}`, '_blank');
+    setSubmitMethod('WhatsApp');
     setSubmitted(true);
   };
 
-  const reset = () => { setForm(EMPTY); setStep(0); setSubmitted(false); setErrors({}); };
+  const submitSms = () => {
+    window.open(`sms:${PHONE_NUMBER}?&body=${buildSmsMessage(form)}`, '_self');
+    setSubmitMethod('SMS');
+    setSubmitted(true);
+  };
+
+  const reset = () => { setForm(EMPTY); setStep(0); setSubmitted(false); setSubmitMethod('WhatsApp'); setErrors({}); };
 
   return (
-    <section id="booking" ref={sectionRef} className="relative py-32 overflow-hidden section-bg">
+    <section id="booking" ref={sectionRef} className="relative py-24 overflow-hidden section-bg">
       <ParallaxBg factor={0.20} className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-gold-500/[0.03] blur-[150px]" />
       <ParallaxBg factor={0.38} className="top-0 right-0 w-72 h-72 rounded-full bg-gold-500/[0.025] blur-[100px]" />
 
@@ -122,14 +141,14 @@ export default function BookingForm({ preselectedVehicle }) {
               <span className="text-gradient-gold italic">Luxury Journey</span>
             </h2>
             <p className="text-theme-muted leading-relaxed mb-10">
-              Complete the form and we'll open WhatsApp with your booking details pre-filled. Our team responds within 15 minutes.
+              Complete the form and send your booking details through WhatsApp or direct SMS. Our team responds within 15 minutes.
             </p>
 
             <div className="space-y-5 mb-10">
               {[
                 { num:'01', title:'Choose Your Service',  desc:'Select from airport, corporate, wedding, or hourly.' },
                 { num:'02', title:'Fill Trip Details',     desc:'Pickup, drop-off, date, time, and preferences.' },
-                { num:'03', title:'Confirm via WhatsApp',  desc:"We'll confirm your booking and send price in minutes." },
+                { num:'03', title:'Send Your Request',     desc:"Choose WhatsApp or SMS, then we'll confirm pricing in minutes." },
               ].map((s) => (
                 <div key={s.num} className="flex gap-4 items-start">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center">
@@ -155,7 +174,7 @@ export default function BookingForm({ preselectedVehicle }) {
           {/* Right: form */}
           <div className={`transition-all duration-700 delay-200 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             {submitted ? (
-              <SuccessCard onReset={reset} form={form} />
+              <SuccessCard onReset={reset} form={form} submitMethod={submitMethod} />
             ) : (
               <div className="glass rounded-3xl p-8 gold-border">
                 {/* Step indicator */}
@@ -310,7 +329,7 @@ export default function BookingForm({ preselectedVehicle }) {
                 {step === 2 && (
                   <div>
                     <h3 className="text-lg font-bold text-theme mb-2">Confirm Your Booking</h3>
-                    <p className="text-sm text-theme-muted mb-6">Review your details before we send via WhatsApp.</p>
+                    <p className="text-sm text-theme-muted mb-6">Review your details before sending by WhatsApp or SMS.</p>
                     <div className="space-y-0">
                       {[
                         { label:'Service',    value: form.serviceType },
@@ -330,7 +349,7 @@ export default function BookingForm({ preselectedVehicle }) {
                     </div>
                     <div className="mt-6 p-4 rounded-2xl bg-gold-500/8 border border-gold-500/20">
                       <p className="text-xs text-gold-500 leading-relaxed">
-                        Clicking "Send via WhatsApp" will open WhatsApp with your details pre-filled. We respond within 15 minutes with a price quote.
+                        Choose WhatsApp or SMS to open your preferred messaging app with these details pre-filled. We respond within 15 minutes with a price quote.
                       </p>
                     </div>
                   </div>
@@ -350,11 +369,18 @@ export default function BookingForm({ preselectedVehicle }) {
                       Continue <ChevronRight size={16} />
                     </button>
                   ) : (
-                    <button onClick={submit}
-                      className="btn-primary flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl text-sm font-bold">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L0 24l6.335-1.51A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-4.994-1.368l-.358-.213-3.76.897.947-3.666-.234-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-                      Send via WhatsApp
-                    </button>
+                    <div className="flex-1 grid sm:grid-cols-2 gap-3">
+                      <button onClick={submit}
+                        className="btn-primary flex items-center justify-center gap-2 py-3.5 rounded-2xl text-sm font-bold">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L0 24l6.335-1.51A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-4.994-1.368l-.358-.213-3.76.897.947-3.666-.234-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                        WhatsApp
+                      </button>
+                      <button onClick={submitSms}
+                        className="btn-outline flex items-center justify-center gap-2 py-3.5 rounded-2xl text-sm font-bold">
+                        <MessageSquare size={18} />
+                        SMS
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
@@ -366,7 +392,7 @@ export default function BookingForm({ preselectedVehicle }) {
   );
 }
 
-function SuccessCard({ onReset, form }) {
+function SuccessCard({ onReset, form, submitMethod }) {
   return (
     <div className="glass rounded-3xl p-10 gold-border text-center">
       <div className="w-20 h-20 rounded-full bg-green-500/15 border border-green-500/30 flex items-center justify-center mx-auto mb-6 animate-pulse-gold">
@@ -374,7 +400,7 @@ function SuccessCard({ onReset, form }) {
       </div>
       <h3 className="playfair text-2xl font-bold text-theme mb-3">Booking Request Sent!</h3>
       <p className="text-theme-muted text-sm leading-relaxed mb-8">
-        Thank you <span className="text-gold-400">{form.fullName}</span>. Your booking has been sent to our team via WhatsApp. We'll confirm within 15 minutes.
+        Thank you <span className="text-gold-400">{form.fullName}</span>. Your booking has been sent to our team via {submitMethod}. We'll confirm within 15 minutes.
       </p>
       <div className="text-left space-y-2 mb-8 p-5 rounded-2xl border border-theme" style={{ background: 'var(--bg-card)' }}>
         <p className="text-xs text-theme-subtle uppercase tracking-widest mb-3">Booking Summary</p>

@@ -69,19 +69,6 @@ export const FLEET = [
     imageAlt: 'Black Cadillac Escalade luxury SUV',
   },
   {
-    id: 'sprinter',
-    name: 'Mercedes Sprinter',
-    category: 'Executive Van',
-    passengers: 14,
-    luggage: 14,
-    features: ['Conference seating', 'Wi-Fi', 'Climate control', 'LED lighting'],
-    bestFor: ['Group Transportation', 'Corporate Travel', 'Wedding & Events'],
-    badge: 'Group Special',
-    badgeColor: 'bg-purple-600 text-white',
-    image: 'https://images.unsplash.com/photo-1756443773455-22e4f3d8d823?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Black Mercedes G-Class luxury SUV',
-  },
-  {
     id: 'suburban',
     name: 'Chevrolet Suburban',
     category: 'Full-Size SUV',
@@ -93,19 +80,6 @@ export const FLEET = [
     badgeColor: '',
     image: 'https://images.unsplash.com/photo-1758025550252-2eb870da49cc?auto=format&fit=crop&w=900&q=80',
     imageAlt: 'Black luxury SUV indoors',
-  },
-  {
-    id: 'genesis',
-    name: 'Genesis G90',
-    category: 'Executive Sedan',
-    passengers: 3,
-    luggage: 3,
-    features: ['Massage seats', 'Ambient lighting', 'Noise cancellation', 'Panoramic roof'],
-    bestFor: ['Corporate Travel', 'Airport Transfer', 'Hourly Service'],
-    badge: 'VIP Choice',
-    badgeColor: 'bg-rose-600 text-white',
-    image: 'https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Black luxury executive sedan',
   },
 ];
 
@@ -137,4 +111,6 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const WHATSAPP_NUMBER = '14704190528';
+export const PHONE_NUMBER = '14704190528';
+export const PHONE_DISPLAY = '+1 (470) 419-0528';
+export const WHATSAPP_NUMBER = PHONE_NUMBER;

@@ -24,7 +24,7 @@ export default function About() {
   const [sectionRef, inView] = useInView();
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-32 overflow-hidden section-bg">
+    <section id="about" ref={sectionRef} className="relative py-24 overflow-hidden section-bg">
       <ParallaxBg factor={0.30} className="top-1/4 right-0 w-[520px] h-[520px] rounded-full bg-gold-500/[0.045] blur-[110px]" />
       <ParallaxBg factor={0.18} className="bottom-0 left-0 w-72 h-72 rounded-full bg-gold-500/[0.03] blur-[90px]" />
 

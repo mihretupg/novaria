@@ -18,18 +18,14 @@ export default function Services() {
   const [sectionRef, inView] = useInView();
 
   return (
-    <section id="services" ref={sectionRef} className="relative py-32 overflow-hidden section-bg">
+    <section id="services" ref={sectionRef} className="relative py-20 overflow-hidden section-bg">
       <ParallaxBg factor={0.22} className="top-0 right-1/4 w-[600px] h-[600px] rounded-full bg-gold-500/[0.045] blur-[120px]" />
       <ParallaxBg factor={0.35} className="-bottom-20 left-10 w-80 h-80 rounded-full bg-gold-500/[0.03] blur-[100px]" />
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className={`text-center mb-20 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-400 mb-4">What We Offer</p>
-          <h2 className="playfair text-4xl md:text-5xl font-bold text-theme mb-5">World-Class Services</h2>
-          <p className="text-theme-muted max-w-xl mx-auto leading-relaxed">
-            Every journey tailored to perfection. From the moment you book to your final destination, we deliver an unrivaled luxury experience.
-          </p>
-          <div className="section-divider mx-auto mt-8" />
+        <div className={`text-center mb-12 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-400">What We Offer</p>
+          <div className="section-divider mx-auto mt-6" />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

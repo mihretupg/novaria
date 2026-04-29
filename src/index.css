@@ -241,8 +241,8 @@
 }
 
 /* ─── Light mode helpers for hero overlay ───────────────────── */
-:root:not(.dark) .hero-overlay-l { background: linear-gradient(to right, #F8F5EF, rgba(248,245,239,0.85) 45%, rgba(248,245,239,0.2)); }
-:root.dark       .hero-overlay-l { background: linear-gradient(to right, #080808, rgba(8,8,8,0.82) 42%, rgba(8,8,8,0.05)); }
+:root:not(.dark) .hero-overlay-l { background: linear-gradient(to right, #F8F5EF 0%, rgba(248,245,239,0.82) 34%, rgba(248,245,239,0.24) 54%, rgba(248,245,239,0.03) 76%); }
+:root.dark       .hero-overlay-l { background: linear-gradient(to right, #080808 0%, rgba(8,8,8,0.78) 34%, rgba(8,8,8,0.22) 54%, rgba(8,8,8,0.02) 76%); }
 :root:not(.dark) .hero-overlay-b { background: linear-gradient(to top, #F8F5EF, transparent); }
 :root.dark       .hero-overlay-b { background: linear-gradient(to top, #080808, transparent); }
 :root:not(.dark) .hero-overlay-t { background: linear-gradient(to bottom, rgba(248,245,239,0.65), transparent); }

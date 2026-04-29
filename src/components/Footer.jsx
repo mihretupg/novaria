@@ -1,4 +1,5 @@
-import { WHATSAPP_NUMBER, NAV_LINKS } from '../data';
+import { MessageSquare } from 'lucide-react';
+import { PHONE_NUMBER, WHATSAPP_NUMBER, NAV_LINKS } from '../data';
 
 export default function Footer() {
   const scrollTo = (href) =>
@@ -29,12 +30,17 @@ export default function Footer() {
                   <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L0 24l6.335-1.51A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-4.994-1.368l-.358-.213-3.76.897.947-3.666-.234-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
                 </svg>
               </a>
-              <a href="tel:+14704190528"
+              <a href={`tel:+${PHONE_NUMBER}`}
                 className="w-10 h-10 rounded-full border border-theme hover:border-gold-500/35 hover:bg-gold-500/8 flex items-center justify-center transition-all duration-200"
                 aria-label="Phone">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-theme-muted">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                 </svg>
+              </a>
+              <a href={`sms:${PHONE_NUMBER}?&body=Hi%20Novaria%2C%20I%27d%20like%20to%20book%20a%20ride.`}
+                className="w-10 h-10 rounded-full border border-theme hover:border-gold-500/35 hover:bg-gold-500/8 flex items-center justify-center transition-all duration-200"
+                aria-label="SMS">
+                <MessageSquare size={15} className="text-theme-muted" />
               </a>
             </div>
           </div>
