@@ -134,7 +134,7 @@ export default function BookingForm({ preselectedVehicle }) {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
           {/* Left: info */}
-          <div className={`lg:sticky lg:top-32 transition-all duration-700 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+          <div className={`hidden lg:block lg:sticky lg:top-32 transition-all duration-700 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-400 mb-4">Reserve Your Ride</p>
             <h2 className="playfair text-4xl md:text-5xl font-bold text-theme mb-6">
               Book Your<br />
