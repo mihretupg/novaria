@@ -90,7 +90,7 @@ export default function Hero() {
           </h1>
 
           <p className={`text-theme-muted text-lg leading-relaxed max-w-md mb-10 transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-            Professional limo and black car service for airport transfers, corporate travel, weddings, and special events across Dallas and the DFW metroplex.
+            Professional limo car service for airport transfers, corporate travel, weddings, and special events across Dallas and the DFW metroplex.
           </p>
 
           <div className={`flex flex-wrap gap-4 mb-14 transition-all duration-700 delay-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
