@@ -32,7 +32,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
 
           {/* Left: visual card */}
-          <div className={`relative transition-all duration-700 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+          <div className={`relative hidden lg:block transition-all duration-700 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative rounded-3xl overflow-hidden card-luxury">
               <div className="absolute inset-0 bg-gradient-to-br from-gold-500/10 via-transparent to-gold-900/5" />
               <div className="relative p-10 pb-16">
