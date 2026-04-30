@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className={`absolute top-0 right-0 h-full w-80 glass border-l border-theme p-8 flex flex-col transition-transform duration-300 ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         } dark:bg-black/55 bg-white/65 backdrop-blur-2xl`}>
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex justify-between items-center mb-10">
             <div className="inline-flex flex-col items-center leading-none">
               <span className="text-gold-400 font-black tracking-widest">NOVARIA</span>
               <span className="text-xs font-semibold tracking-[0.58em] text-gold-400 uppercase mt-1">Limo</span>
@@ -87,7 +87,7 @@ export default function Navbar() {
               <X size={24} />
             </button>
           </div>
-          <nav className="flex flex-col gap-6 flex-1">
+          <nav className="flex flex-col gap-5">
             {NAV_LINKS.map((link) => (
               <button key={link.href} onClick={() => handleNavClick(link.href)}
                 className="text-left text-lg font-medium text-theme-muted hover:text-gold-400 transition-colors">
@@ -95,7 +95,7 @@ export default function Navbar() {
               </button>
             ))}
           </nav>
-          <div className="mt-8 grid gap-3">
+          <div className="mt-7 grid gap-3">
             <a href={`sms:${PHONE_NUMBER}?&body=Hi%20Novaria%2C%20I%27d%20like%20to%20book%20a%20ride.`}
               className="btn-outline w-full py-4 rounded-2xl text-base font-bold justify-center">
               <MessageSquare size={17} />
