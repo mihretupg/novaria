@@ -4,8 +4,8 @@
  *
  * Receives booking form data via POST, validates it,
  * sends an email notification, and returns a JSON response.
- * The JavaScript in script.js calls this via fetch() as a
- * fire-and-forget notification after opening WhatsApp.
+ * The React booking form can call this via fetch() as a
+ * notification endpoint after collecting ride details.
  *
  * To enable email: set $emailTo to your business email.
  * Requires PHP with mail() support or swap for PHPMailer.
