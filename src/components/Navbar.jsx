@@ -96,16 +96,18 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mt-7 grid gap-3">
+            <div className="grid grid-cols-2 gap-3">
             <a href={`sms:${PHONE_NUMBER}?&body=Hi%20Novaria%2C%20I%27d%20like%20to%20book%20a%20ride.`}
-              className="btn-outline w-full py-4 rounded-2xl text-base font-bold justify-center flex-row whitespace-nowrap">
+              className="btn-outline w-full px-3 py-4 rounded-2xl text-sm font-bold justify-center flex-row whitespace-nowrap">
               <MessageSquare size={17} />
               <span>SMS</span>
             </a>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
-              className="btn-outline w-full py-4 rounded-2xl text-base font-bold justify-center flex-row whitespace-nowrap">
+              className="btn-outline w-full px-3 py-4 rounded-2xl text-sm font-bold justify-center flex-row whitespace-nowrap">
               <WhatsAppIcon size={17} />
               <span>WhatsApp</span>
             </a>
+            </div>
             <button onClick={() => handleNavClick('#booking')}
               className="btn-primary w-full py-4 rounded-2xl text-base font-bold">
               Book Now
