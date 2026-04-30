@@ -134,17 +134,17 @@ export default function BookingForm({ preselectedVehicle }) {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
           {/* Left: info */}
-          <div className={`hidden lg:block lg:sticky lg:top-32 transition-all duration-700 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+          <div className={`lg:sticky lg:top-32 transition-all duration-700 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-400 mb-4">Reserve Your Ride</p>
             <h2 className="playfair text-4xl md:text-5xl font-bold text-theme mb-6">
               Book Your<br />
               <span className="text-gradient-gold italic">Luxury Journey</span>
             </h2>
             <p className="text-theme-muted leading-relaxed mb-10">
-              Complete the form and send your booking details through WhatsApp or direct SMS. Our team responds within 15 minutes.
+              Complete your booking details. Our team responds within 15 minutes.
             </p>
 
-            <div className="space-y-5 mb-10">
+            <div className="hidden lg:block space-y-5 mb-10">
               {[
                 { num:'01', title:'Choose Your Service',  desc:'Select from airport, corporate, wedding, or hourly.' },
                 { num:'02', title:'Fill Trip Details',     desc:'Pickup, drop-off, date, time, and preferences.' },
@@ -162,7 +162,7 @@ export default function BookingForm({ preselectedVehicle }) {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="hidden lg:flex flex-wrap gap-3">
               {['Instant Confirmation','24/7 Support','No Hidden Fees'].map((b) => (
                 <div key={b} className="flex items-center gap-2 text-xs text-theme-muted px-3 py-2 rounded-full border border-theme">
                   <CheckCircle size={12} className="text-gold-400" />{b}
