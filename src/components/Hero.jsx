@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, MapPin, MessageSquare, Star } from 'lucide-react';
-import { PHONE_NUMBER, WHATSAPP_NUMBER } from '../data';
+import { ArrowRight, MapPin, Star } from 'lucide-react';
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -29,7 +28,7 @@ export default function Hero() {
       {/* ── Parallax photo layer ────────────────────────────────
           The container extends 120px beyond the section on both top
           and bottom so there's always room to shift without gaps.
-      ── */}
+      ── */} 
       <div
         className={`pointer-events-none transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}
         style={{
@@ -72,7 +71,7 @@ export default function Hero() {
         }} />
 
       {/* ── Content ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-28 pb-20 grid md:grid-cols-2 gap-16 items-center">
 
         {/* Left */}
         <div>
@@ -93,24 +92,11 @@ export default function Hero() {
             Professional limo car service for airport transfers, corporate travel, weddings, and special events across Dallas and the DFW metroplex.
           </p>
 
-          <div className={`flex flex-wrap gap-4 mb-14 transition-all duration-700 delay-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <div className={`flex flex-wrap justify-start gap-4 mb-14 transition-all duration-700 delay-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             <button onClick={scrollToBooking}
-              className="btn-primary flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold">
+              className="btn-primary inline-flex w-fit items-center gap-2 px-8 py-4 rounded-full text-base font-bold">
               Reserve Your Ride <ArrowRight size={18} />
             </button>
-            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
-              className="btn-outline flex items-center gap-2 px-8 py-4 rounded-full text-base">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L0 24l6.335-1.51A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-4.994-1.368l-.358-.213-3.76.897.947-3.666-.234-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
-              </svg>
-              WhatsApp Us
-            </a>
-            <a href={`sms:${PHONE_NUMBER}?&body=Hi%20Novaria%2C%20I%27d%20like%20to%20book%20a%20ride.`}
-              className="btn-outline flex items-center gap-2 px-8 py-4 rounded-full text-base">
-              <MessageSquare size={18} />
-              Text Us
-            </a>
           </div>
 
           <div className={`flex flex-wrap gap-8 transition-all duration-700 delay-[400ms] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
