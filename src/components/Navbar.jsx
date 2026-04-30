@@ -70,11 +70,11 @@ export default function Navbar() {
       <div className={`fixed inset-0 z-[60] transition-all duration-300 ${
         mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
-        <div className="absolute inset-0 dark:bg-black/90 bg-white/90 backdrop-blur-xl"
+        <div className="absolute inset-0 dark:bg-black/45 bg-white/35 backdrop-blur-sm"
           onClick={() => setMobileOpen(false)} />
         <div className={`absolute top-0 right-0 h-full w-80 glass border-l border-theme p-8 flex flex-col transition-transform duration-300 ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
+        } dark:bg-black/55 bg-white/65 backdrop-blur-2xl`}>
           <div className="flex justify-between items-center mb-12">
             <div className="inline-flex flex-col items-center leading-none">
               <span className="text-gold-400 font-black tracking-widest">NOVARIA</span>
@@ -98,7 +98,13 @@ export default function Navbar() {
           <div className="mt-8 grid gap-3">
             <a href={`sms:${PHONE_NUMBER}?&body=Hi%20Novaria%2C%20I%27d%20like%20to%20book%20a%20ride.`}
               className="btn-outline w-full py-4 rounded-2xl text-base font-bold justify-center">
-              Text Us
+              <MessageSquare size={17} />
+              SMS
+            </a>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
+              className="btn-outline w-full py-4 rounded-2xl text-base font-bold justify-center">
+              <WhatsAppIcon size={17} />
+              WhatsApp
             </a>
             <button onClick={() => handleNavClick('#booking')}
               className="btn-primary w-full py-4 rounded-2xl text-base font-bold">
