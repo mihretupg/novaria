@@ -25,9 +25,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex flex-col leading-none focus:outline-none">
+            className="inline-flex flex-col items-center leading-none focus:outline-none">
             <span className="text-xl font-black tracking-widest text-theme">NOVARIA</span>
-            <span className="text-[9px] font-medium tracking-[0.32em] text-gold-500 uppercase mt-0.5">Limo</span>
+            <span className="text-sm font-semibold tracking-[0.68em] text-gold-500 uppercase mt-1">Limo</span>
           </button>
 
           {/* Desktop links */}
@@ -76,7 +76,10 @@ export default function Navbar() {
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="flex justify-between items-center mb-12">
-            <span className="text-gold-400 font-black tracking-widest">NOVARIA</span>
+            <div className="inline-flex flex-col items-center leading-none">
+              <span className="text-gold-400 font-black tracking-widest">NOVARIA</span>
+              <span className="text-xs font-semibold tracking-[0.58em] text-gold-400 uppercase mt-1">Limo</span>
+            </div>
             <button
               onClick={() => setMobileOpen(false)}
               className="w-11 h-11 rounded-xl border border-gold-500/50 bg-gold-500/10 text-gold-400 hover:bg-gold-500 hover:text-black transition-all flex items-center justify-center"

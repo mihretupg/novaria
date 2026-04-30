@@ -14,12 +14,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <button onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}
-              className="flex flex-col leading-none mb-5">
+              className="inline-flex flex-col items-center leading-none mb-5">
               <span className="text-2xl font-black tracking-widest text-theme">NOVARIA</span>
-              <span className="text-[10px] font-medium tracking-[0.4em] text-gold-500 uppercase mt-1">Luxury Chauffeur Service</span>
+              <span className="text-base font-semibold tracking-[0.68em] text-gold-500 uppercase mt-1.5">Limo</span>
             </button>
             <p className="text-sm text-theme-muted leading-relaxed max-w-xs">
-              Premium limo and black car service throughout Dallas and the DFW Metroplex. Available 24/7.
+              Premium limo car service throughout Dallas and the DFW Metroplex. Available 24/7.
             </p>
             <div className="flex gap-3 mt-6">
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
