@@ -46,12 +46,8 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6">
         <div className={`text-center mb-20 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-400 mb-4">Get In Touch</p>
-          <h2 className="playfair text-4xl md:text-5xl font-bold text-theme mb-5">
-            We're Here for You,<br />
-            <span className="text-gradient-gold italic">Around the Clock</span>
-          </h2>
           <p className="text-theme-muted max-w-xl mx-auto leading-relaxed">
-            Reach us through WhatsApp, SMS, or phone. Our team is available 24/7 to assist with bookings, modifications, and questions.
+            Premium limo car service throughout Dallas and the DFW Metroplex. Available 24/7.
           </p>
           <div className="section-divider mx-auto mt-8" />
         </div>
